@@ -1,12 +1,9 @@
 import express, {Router} from 'express';
 
-// Router
-const router: Router = express.Router();
+import {status} from './status';
+import {verse} from './verse';
 
-const status = require('./status');
-const verse = require('./verse/verse');
+export const v1: Router = express.Router();
 
-router.use('/status', status);
-router.use('/verse', verse);
-
-export default router;
+v1.use('/status', status);
+v1.use('/verse', verse);

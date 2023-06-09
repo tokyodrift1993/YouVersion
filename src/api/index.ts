@@ -1,12 +1,7 @@
 import express, {Router} from 'express';
 
-// Router
-const router: Router = express.Router();
+import {v1} from './v1';
 
-// Api versions
-import v1 from './v1/index';
+export const api: Router = express.Router();
 
-// Directing versions
-router.use('/v1', v1);
-
-export default router;
+api.use('/v1', v1);
