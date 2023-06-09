@@ -1,19 +1,19 @@
-import express, {Express} from 'express'
-import dotEnvExtended from 'dotenv-extended'
+import express, {Express} from 'express';
+import dotEnvExtended from 'dotenv-extended';
 
 import api from './api/index';
 
-dotEnvExtended.load()
+dotEnvExtended.load();
 
 const app: Express = express();
 const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
 
-app.use("/api", api);
+app.use('/api', api);
 
 app.listen(port, () => {
-    console.log(`⚡️[Server]: Server is running at http://localhost:${port}`);
+  console.log(`⚡️[Server]: Server is running at http://localhost:${port}`);
 });
 
 export default app;
