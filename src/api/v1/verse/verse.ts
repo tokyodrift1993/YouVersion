@@ -53,8 +53,8 @@ router.get('/', async (req: Request, res: Response) => {
 
     const versesArray: Array<String> = [];
     const citationsArray: Array<String> = [];
-    const wrapper = $('.text-19');
-    const citationWrapper = $('.text-16');
+    const wrapper = $('div.max-w-full.w-full div > p');
+    const citationWrapper = $('div.max-w-full.w-full div > h2');
 
     await wrapper.each((i, p) => {
       let unformattedVerse = $(p).eq(0).text();
