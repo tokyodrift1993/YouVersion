@@ -112,3 +112,6 @@ old_node_modules
 
 # Deprecated :)
 deprecated/
+
+# idea
+.idea
