@@ -115,3 +115,7 @@ deprecated/
 
 # idea
 .idea
+
+# docker
+/.env.docker
+/.docker/redis

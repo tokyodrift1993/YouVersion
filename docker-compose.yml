@@ -1,0 +1,36 @@
+# run with: docker compose -f docker-compose.yml up -d
+
+# update: docker pull redis:6.2.12-bullseye && docker compose down && docker compose up -d
+
+version: "3.9"
+
+
+x-base-data: &docker-base-data
+  tty: true
+  environment:
+    PUID: 1000
+    PGID: 1000
+    TZ: Europe/Zurich
+  restart: unless-stopped
+
+services:
+  redis:
+    <<: *docker-base-data
+    image: redis:6.2.12-bullseye
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - ./.docker/redis:/data
+    ports:
+      - "6379:6379"
+  api:
+    <<: *docker-base-data
+    build: .
+    ports:
+      - "3000:3000"
+    env_file: .env.docker
+    depends_on:
+      - redis
+networks:
+  default:
+    external: true
+    name: dk-network
