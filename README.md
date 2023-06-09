@@ -200,5 +200,7 @@ Trying to access a book that does not exist will prompt a similar `400 Bad Respo
 | NLT      | 116  |
 | NR06     | 122  |
 | VULG     | 823  |
+| TAOVBSI  | 339  |
+| SCH2000  | 157  |
 
 </details>
