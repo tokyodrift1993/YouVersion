@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 
 USER root
 
-LABEL org.opencontainers.image.source=https://github.com/tokyodrift1993/youversion
+LABEL org.opencontainers.image.source=https://github.com/tokyodrift1993/YouVersion
 
 ARG PUSER=youversion
 ARG PUID=1000
