@@ -42,7 +42,7 @@ pnpm run start
 # Making Requests
 
 | Query   | Default | Required | Example     |
-| ------- | ------- | -------- | ----------- |
+|---------|---------|----------|-------------|
 | book    | None    | true     | John or JHN |
 | chapter | 1       | false    | 7 or 10     |
 | verses  | 1       | false    | 1-3 or 7-10 |
@@ -83,7 +83,9 @@ A good API call responds with a `200 OK` and the requested verse(s).
 
 <br>
 
-Checking the API status is pretty simple, just make a request to the following route and if everything is fine it'll respond with a `200 OK` and no JSON object.
+Checking the API status is pretty simple, just make a request to the following route and if everything is fine it'll
+respond with a `200 OK` and no JSON object.
+
 ```
 https://serverAddress.com/api/v1/status
 ```
@@ -116,7 +118,7 @@ Trying to access a book that does not exist will prompt a similar `400 Bad Respo
 <summary>Books and Aliases</summary>
 
 | Book              | Alias |
-| ----------------- | ----- |
+|-------------------|-------|
 | Genesis           | GEN   |
 | Exodus            | EXO   |
 | Leviticus         | LEV   |
@@ -190,7 +192,7 @@ Trying to access a book that does not exist will prompt a similar `400 Bad Respo
 <summary>Versions</summary>
 
 | Versions | ID   |
-| -------- | ---- |
+|----------|------|
 | AMP      | 1588 |
 | ICL00D   | 1196 |
 | KJV      | 1    |
