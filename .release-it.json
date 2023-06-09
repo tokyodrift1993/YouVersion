@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "after:bump": "auto-changelog --latest-version v${version}"
+  },
+  "git": {
+    "changelog": "auto-changelog --stdout --template ./changelog-template-for-release.hbs",
+    "commitMessage": "Release v${version}",
+    "tagName": "v${version}",
+    "tagArgs": "-s"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "tokenRef": "GITHUB_TOKEN_CLI_RELEASER"
+  },
+  "npm": {
+    "publish": false
+  }
+}

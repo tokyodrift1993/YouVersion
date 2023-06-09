@@ -1,0 +1,8 @@
+{
+  "output": "CHANGELOG.md",
+  "template": "keepachangelog",
+  "commitLimit": false,
+  "unreleased": true,
+  "ignoreCommitPattern": "(Release (v)?|Merge (remote-tracking )?branch)",
+  "sortCommits": "date"
+}

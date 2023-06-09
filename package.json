@@ -8,7 +8,9 @@
     "lint": "eslint src/ --ext .js,.ts",
     "build": "tsc",
     "start": "npm run build && node ./dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\""
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "release": "release-it",
+    "changelog": "auto-changelog --ignore-commit-pattern \"Release v\" --sort-commits date-desc"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.2",
+    "auto-changelog": "~2.4.0",
     "eslint": "~8.42.0",
     "eslint-config-prettier": "~8.8.0",
     "@typescript-eslint/eslint-plugin": "~5.59.0",
@@ -43,6 +46,7 @@
     "eslint-plugin-unused-imports": "~2.0.0",
     "@babel/preset-env": "^7.20.2",
     "@types/express": "^4.17.17",
+    "release-it": "<15",
     "@types/node": "^18.13.0",
     "prettier": "npm:@btmills/prettier@^2.8.8",
     "tsc-watch": "^6.0.0",
