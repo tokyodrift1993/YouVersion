@@ -1,4 +1,4 @@
-# YouVersion-API
+# YouVersion
 
 Express Rest API for getting verses and such from YouVersion.
 
@@ -46,7 +46,7 @@ pnpm run start
 | book    | None    | true     | John or JHN |
 | chapter | 1       | false    | 7 or 10     |
 | verses  | 1       | false    | 1-3 or 7-10 |
-| version | NIV     | false    | KJV or NLT  |
+| version | KJV     | false    | KJV or NLT  |
 
 ## Examples
 
