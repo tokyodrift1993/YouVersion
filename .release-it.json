@@ -1,4 +1,9 @@
 {
+  "plugins": {
+    "@release-it/bumper": {
+      "out": ["apps/api/package.json", "apps/cli/package.json"]
+    }
+  },
   "hooks": {
     "after:bump": "auto-changelog --latest-version v${version}"
   },
