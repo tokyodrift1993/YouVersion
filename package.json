@@ -1,6 +1,6 @@
 {
   "name": "@tokyodrift1993/youversion",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Express Rest API for getting verses from YouVersion.",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
