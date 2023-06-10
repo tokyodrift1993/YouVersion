@@ -4,11 +4,10 @@ Express Rest API for getting verses and such from YouVersion.
 
 # Building and Running
 
-> **Note**
-> I use `pnpm` in these examples. `NPM` will also work if you don't have or want to install `pnpm`
+Install `pnpm`:
 
 ```
-npm i --location=global pnpm@6
+npm i --location=global pnpm@8
 ```
 
 First step is of course installing the modules

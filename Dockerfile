@@ -29,7 +29,7 @@ RUN mkdir -p ${NVM_DIR} \
   && nvm install ${NODE_VERSION} \
   && nvm alias default ${NODE_VERSION} \
   && nvm use default \
-  && npm install --location=global pnpm@6
+  && npm install --location=global pnpm@8
 
 ENV NODE_PATH ${NVM_DIR}/versions/node/v${NODE_VERSION}/bin
 ENV PATH ${NODE_PATH}:${PATH}
