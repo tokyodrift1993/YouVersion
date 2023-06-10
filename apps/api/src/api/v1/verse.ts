@@ -22,6 +22,7 @@ interface ApiVerseResponse {
   chapter: number;
   verses: string;
 }
+
 interface ApiVerseRequestParams {
   book: string;
   chapter: number;
