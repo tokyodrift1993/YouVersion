@@ -40,12 +40,13 @@ pnpm run start
 
 # Making Requests
 
-| Query   | Default | Required | Example     |
-|---------|---------|----------|-------------|
-| book    | None    | true     | John or JHN |
-| chapter | 1       | false    | 7 or 10     |
-| verses  | 1       | false    | 1-3 or 7-10 |
-| version | KJV     | false    | KJV or NLT  |
+| Query   | Default | Required | Example       |
+|---------|---------|----------|---------------|
+| book    | None    | true     | John or JHN   |
+| chapter | 1       | false    | 7 or 10       |
+| verses  | 1       | false    | 1-3 or 7-10   |
+| version | KJV     | false    | KJV or NLT    |
+| force   | false   | false    | false or true |
 
 ## Examples
 

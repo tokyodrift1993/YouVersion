@@ -27,6 +27,7 @@ interface ApiVerseRequestParams {
   chapter: number;
   verses: string;
   version: string;
+  force: string | boolean;
 }
 
 export const verse: Router = express.Router();
@@ -45,6 +46,7 @@ verse.get(
     const chapter = (req.query.chapter ??= 1);
     const verses = (req.query.verses ??= '1');
     const version = (req.query.version ??= 'KJV');
+    const force = (req.query.force = req.query.force === true || req.query.force === 'true');
 
     type bookType = {
       book: string;
@@ -77,10 +79,14 @@ verse.get(
       let data;
       const resultsFromCache = redisClient && (await redisClient.get(URL));
 
-      if (resultsFromCache) {
+      if (!force && resultsFromCache) {
         data = resultsFromCache;
         console.log('🖥️[Web]: get content from cache');
       } else {
+        if (force && redisClient) {
+          console.log('🖥️[Web]: get content live (forced)!');
+        }
+
         data = (await axios.get<string>(URL)).data;
       }
 
