@@ -24,10 +24,10 @@ services:
       - "6379:6379"
   api:
     <<: *docker-base-data
-    build: .
+    build: apps/api
     ports:
       - "3000:3000"
-    env_file: .env.docker
+    env_file: apps/api/.env.docker
     depends_on:
       - redis
 networks:

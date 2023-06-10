@@ -1,7 +1,6 @@
 import axios, {AxiosError} from 'axios';
 import * as cheerio from 'cheerio';
 import express, {Request, Response, Router} from 'express';
-import * as core from 'express-serve-static-core';
 
 import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper';
 import bookList from './db/books.json';
@@ -35,7 +34,7 @@ export const verse: Router = express.Router();
 verse.get(
   '/',
   async (
-    req: Request<core.ParamsDictionary, unknown, unknown, ApiVerseRequestParams>,
+    req: Request<Record<string, string>, unknown, unknown, ApiVerseRequestParams>,
     res: Response<ApiErrorResponse | ApiVerseResponse>,
   ) => {
     const redisClient = await getRedisClient();
