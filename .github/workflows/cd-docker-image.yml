@@ -12,6 +12,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  IMAGE_NAME: youversion-api
 
 jobs:
   build-and-push-image:
@@ -23,10 +24,6 @@ jobs:
       packages: write
 
     steps:
-      - name: downcase repository name
-        run: |
-          echo "IMAGE_NAME=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
