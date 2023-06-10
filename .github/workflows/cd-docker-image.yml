@@ -12,7 +12,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: youversion-api
+  IMAGE_NAME: ${{ github.repository_owner }}/youversion-api
 
 jobs:
   build-and-push-image:
