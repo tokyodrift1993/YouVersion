@@ -6,6 +6,13 @@ import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper
 import bookList from './db/books.json';
 import versions from './db/versions.json';
 
+const apiError = (res: Response, code: number, message: string) => {
+  res.status(code).send({
+    code: code,
+    message: message,
+  });
+};
+
 export const verse: Router = express.Router();
 
 verse.get('/', async (req: Request, res: Response) => {
@@ -24,14 +31,9 @@ verse.get('/', async (req: Request, res: Response) => {
     chapters: number;
   };
 
-  function apiError(code: number, message: string) {
-    res.status(code).send({
-      code: code,
-      message: message,
-    });
+  if (!book) {
+    return apiError(res, 400, "Missing field 'book'");
   }
-
-  if (!book) return apiError(400, "Missing field 'book'");
 
   const versionFinder = {
     version: (Object.keys(versions)[Object.keys(versions).indexOf(version.toLocaleString().toLocaleUpperCase())] ??= 'NIV'),
@@ -42,7 +44,9 @@ verse.get('/', async (req: Request, res: Response) => {
     bookList.books.find((o: bookType) => o.book.toLowerCase() === book.toLowerCase())
     || bookList.books.find((o: bookType) => o.aliases.includes(book.toUpperCase()));
 
-  if (!bookFinder) return apiError(400, `Could not find book '${book}' by name or alias.`);
+  if (!bookFinder) {
+    return apiError(res, 400, `Could not find book '${book}' by name or alias.`);
+  }
 
   const URL = `${baseURL}/${versionFinder.id}/${bookFinder.aliases[0]}.${chapter}.${verses}`;
 
@@ -62,8 +66,14 @@ verse.get('/', async (req: Request, res: Response) => {
     const $ = cheerio.load(data);
 
     const lastVerse = $('.ChapterContent_reader__UZc2K').eq(-1).text();
-    if (lastVerse) return apiError(400, 'Verse not found');
-    if (chapter > bookFinder.chapters) return apiError(400, 'Chapter not found.');
+
+    if (lastVerse) {
+      return apiError(res, 400, 'Verse not found');
+    }
+
+    if (chapter > bookFinder.chapters) {
+      return apiError(res, 400, 'Chapter not found.');
+    }
 
     if (!resultsFromCache && redisClient) {
       await redisClient.set(URL, data, {EX: REDIS_VERSE_EXPIRATION()});
