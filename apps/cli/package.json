@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@tokyodrift1993/youversion-cli",
   "version": "0.2.1",
   "description": "Commandline helper for YouVersion.",
   "main": "./dist/index.js",
