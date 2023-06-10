@@ -32,8 +32,14 @@ jobs:
         with:
           version: 8
 
-      - name: Publish package
-        run: pnpm publish --access public
+      - name: Build
         working-directory: apps/cli
+        run: |
+          pnpm build
+
+      - name: Publish package
+        working-directory: apps/cli
+        run: |
+          pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
