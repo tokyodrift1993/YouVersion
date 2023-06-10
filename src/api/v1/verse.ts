@@ -6,16 +6,26 @@ import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper
 import bookList from './db/books.json';
 import versions from './db/versions.json';
 
-const apiError = (res: Response, code: number, message: string) => {
-  res.status(code).send({
-    code: code,
-    message: message,
-  });
+interface ApiErrorResponse {
+  statusCode: number;
+  message: string;
+}
+
+const apiError = (res: Response<ApiErrorResponse>, statusCode: number, message: string) => {
+  res.status(statusCode).send({statusCode, message});
 };
+
+interface ApiVerseResponse {
+  citation: string;
+  passage: string;
+  book: string;
+  chapter: number;
+  verses: string;
+}
 
 export const verse: Router = express.Router();
 
-verse.get('/', async (req: Request, res: Response) => {
+verse.get('/', async (req: Request, res: Response<ApiErrorResponse | ApiVerseResponse>) => {
   const redisClient = await getRedisClient();
 
   const baseURL = 'https://www.bible.com/bible';
@@ -96,21 +106,26 @@ verse.get('/', async (req: Request, res: Response) => {
       citationsArray.push(citation);
     });
 
+    const citation = citationsArray[0];
+
     return res.status(200).send({
-      citation: citationsArray[0],
+      citation: citation,
       passage: versesArray[0],
+      book: citation.match(new RegExp(`(.*) ${chapter}:`))?.[1] || bookFinder.book,
+      chapter,
+      verses,
     });
   } catch (err) {
     console.error(err);
 
     let statusCode = 500;
-    let error = 'An error has occurred';
+    let message = 'An error has occurred';
 
     if (err instanceof AxiosError && err.response) {
       statusCode = err.response.status || statusCode;
-      error = err.response.data || error;
+      message = err.response.data || message;
     }
 
-    return res.status(statusCode).send({error: error});
+    return res.status(statusCode).send({statusCode, message});
   }
 });
