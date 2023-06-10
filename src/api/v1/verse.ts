@@ -74,13 +74,13 @@ verse.get('/', async (req: Request, res: Response) => {
     const wrapper = $('div.max-w-full.w-full div > p');
     const citationWrapper = $('div.max-w-full.w-full div > h2');
 
-    await wrapper.each((i, p) => {
+    wrapper.each((i, p) => {
       const rawVerse = $(p).eq(0).text();
       const formattedVerse = rawVerse.replace(/\n/g, ' ');
       versesArray.push(formattedVerse);
     });
 
-    await citationWrapper.each((i, p) => {
+    citationWrapper.each((i, p) => {
       const citation = $(p).eq(0).text();
 
       citationsArray.push(citation);
