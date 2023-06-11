@@ -74,7 +74,7 @@ verse.get(
           console.log('🖥️[Web]: get content live (forced)!');
         }
 
-        data = (await axios.get<string>(URL)).data;
+        data = (await axios.get<string>(URL, {maxRedirects: 0})).data;
       }
 
       const $ = cheerio.load(data);
