@@ -13,7 +13,7 @@
     "after:bump": "auto-changelog --latest-version v${version}"
   },
   "git": {
-    "changelog": "auto-changelog --stdout --template ./changelog-template-for-release.hbs",
+    "changelog": "auto-changelog --stdout --template ./changelog-template-for-release.hbs --sort-commits date-desc",
     "commitMessage": "Release v${version}",
     "tagName": "v${version}",
     "tagArgs": "-s"
