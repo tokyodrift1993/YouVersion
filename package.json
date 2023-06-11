@@ -3,6 +3,7 @@
   "version": "0.2.5",
   "description": "YouVersion workspace.",
   "scripts": {
+    "lint": "eslint ./ --ext js,ts",
     "release": "release-it",
     "changelog": "auto-changelog --ignore-commit-pattern \"Release v\" --sort-commits date-desc"
   },
