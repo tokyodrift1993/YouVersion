@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Command} from 'commander';
+import {Command, Option} from 'commander';
 import querystring from 'querystring';
 import format from 'string-format';
 
@@ -33,14 +33,18 @@ getVerses
   .name('get-verses')
   .description('Gets verses over the YouVersion Express Api defined in the env file.')
   .requiredOption('--config-file-path <config-file-path>', 'Path to config file')
+  .addOption(new Option('--you-version-api-url <you-version-api-url>', 'turn off colour output').env('YOU_VERSION_API_URL'))
+  .addOption(new Option('--you-version-api-path <you-version-api-path>', 'turn off colour output').env('YOU_VERSION_API_PATH'))
   .option('--output-format <output-format>', 'Format', '{0.passage}\n–\n{1.passage}\n{0.book} | {1.book} {0.chapter}:{0.verses}\n\n')
   .action(async (opts: GetVersesCommandOptions) => {
-    const YOU_VERSION_API_URL = process.env.YOU_VERSION_API_URL;
-    const YOU_VERSION_API_PATH = process.env.YOU_VERSION_API_PATH;
+    const youVersionApiUrl = opts.youVersionApiUrl;
+    const youVersionApiPath = opts.youVersionApiPath;
 
     // ===> pre checks
-    if (!(YOU_VERSION_API_URL && YOU_VERSION_API_PATH)) {
-      console.error('ENV variable "YOU_VERSION_API_URL" adn "YOU_VERSION_API_PATH" must be set!');
+    if (!(youVersionApiUrl && youVersionApiPath)) {
+      console.error(
+        'ENV variable "YOU_VERSION_API_URL" and/or "YOU_VERSION_API_PATH" or parameter "--you-version-api-url" and/or "--you-version-api-path" must be set!',
+      );
 
       return;
     }
@@ -56,7 +60,7 @@ getVerses
         apiVerseResponses[innerIndex] = (
           await axios.get<ApiVerseResponse>(
             buildVerseApiUrl({
-              baseUrl: [YOU_VERSION_API_URL, YOU_VERSION_API_PATH].join(''),
+              baseUrl: [youVersionApiUrl, youVersionApiPath].join(''),
               book: verse.book,
               chapter: verse.chapter,
               verses: verse.verses,

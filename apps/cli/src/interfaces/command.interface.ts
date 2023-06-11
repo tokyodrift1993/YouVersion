@@ -4,4 +4,6 @@ interface RequiredOptions {
 
 export interface GetVersesOptions extends RequiredOptions {
   outputFormat: string;
+  youVersionApiUrl: string;
+  youVersionApiPath: string;
 }
