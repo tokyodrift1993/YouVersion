@@ -72,7 +72,7 @@ verse.get(
       return apiError(res, 400, `Could not find book '${book}' by name or alias.`);
     }
 
-    const URL = `${baseURL}/${versionFinder.id}/${bookFinder.aliases[0]}.${chapter}.${verses}`;
+    const URL = `${baseURL}/${versionFinder.id}/${bookFinder.book}.${chapter}.${verses}`;
 
     console.log('🖥️[Web]: get content for link:', URL);
 

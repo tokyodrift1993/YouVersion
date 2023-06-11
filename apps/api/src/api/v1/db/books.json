@@ -1,464 +1,588 @@
 {
   "books": [
     {
-      "book": "Genesis",
+      "book": "GEN",
       "aliases": [
-        "GEN"
+        "Genesis",
+        "1. Mose",
+        "ஆதியாகமம்"
       ],
       "chapters": 50
     },
     {
-      "book": "Exodus",
+      "book": "EXO",
       "aliases": [
-        "EXO"
+        "Exodus",
+        "2. Mose",
+        "யாத்திராகமம்"
       ],
       "chapters": 40
     },
     {
-      "book": "Leviticus",
+      "book": "LEV",
       "aliases": [
-        "LEV"
+        "Leviticus",
+        "3. Mose",
+        "லேவியராகமம்"
       ],
       "chapters": 27
     },
     {
-      "book": "Numbers",
+      "book": "NUM",
       "aliases": [
-        "NUM"
+        "Numbers",
+        "4. Mose",
+        "எண்ணாகமம்"
       ],
       "chapters": 36
     },
     {
-      "book": "Deuteronomy",
+      "book": "DEU",
       "aliases": [
-        "DEU"
+        "Deuteronomy",
+        "5. Mose",
+        "உபாகமம்"
       ],
       "chapters": 34
     },
     {
-      "book": "Joshua",
+      "book": "JOS",
       "aliases": [
-        "JOS"
+        "Joshua",
+        "Josua",
+        "யோசுவா"
       ],
       "chapters": 24
     },
     {
-      "book": "Judges",
+      "book": "JDG",
       "aliases": [
-        "JDG"
+        "Judges",
+        "Richter",
+        "நியாயாதிபதிகள்"
       ],
       "chapters": 21
     },
     {
-      "book": "Ruth",
+      "book": "RUT",
       "aliases": [
-        "RUT"
+        "Ruth",
+        "ரூத்"
       ],
       "chapters": 4
     },
     {
-      "book": "1st Samuel",
+      "book": "1SA",
       "aliases": [
-        "1SA"
+        "1st Samuel",
+        "1. Samuel",
+        "1 சாமுவேல்"
       ],
       "chapters": 31
     },
     {
-      "book": "2nd Samuel",
+      "book": "2SA",
       "aliases": [
-        "2SA"
+        "2nd Samuel",
+        "2. Samuel",
+        "2 சாமுவேல்"
       ],
       "chapters": 24
     },
     {
-      "book": "1st Kings",
+      "book": "1KI",
       "aliases": [
-        "1KI"
+        "1st Kings",
+        "1. Könige",
+        "1 இராஜாக்கள்"
       ],
       "chapters": 22
     },
     {
-      "book": "2nd Kings",
+      "book": "2KI",
       "aliases": [
-        "2KI"
+        "2nd Kings",
+        "2. Könige",
+        "2 இராஜாக்கள்"
       ],
       "chapters": 25
     },
     {
-      "book": "1st Chronicles",
+      "book": "1CH",
       "aliases": [
-        "1CH"
+        "1st Chronicles",
+        "1. Chronik",
+        "1 நாளாகமம்"
       ],
       "chapters": 29
     },
     {
-      "book": "2nd Chronicles",
+      "book": "2CH",
       "aliases": [
-        "2CH"
+        "2nd Chronicles",
+        "2. Chronik",
+        "2 நாளாகமம்"
       ],
       "chapters": 36
     },
     {
-      "book": "Ezra",
+      "book": "EZR",
       "aliases": [
-        "EZR"
+        "Ezra",
+        "Esra",
+        "எஸ்றா"
       ],
       "chapters": 10
     },
     {
-      "book": "Nehemiah",
+      "book": "NEH",
       "aliases": [
-        "NEH"
+        "Nehemiah",
+        "Nehemia",
+        "நெகேமியா"
       ],
       "chapters": 13
     },
     {
-      "book": "Esther",
+      "book": "EST",
       "aliases": [
-        "EST"
+        "Esther",
+        "எஸ்தர்"
       ],
       "chapters": 10
     },
     {
-      "book": "Job",
+      "book": "JOB",
       "aliases": [
-        "JOB"
+        "Job",
+        "Hiob",
+        "யோபு"
       ],
       "chapters": 42
     },
     {
-      "book": "Psalms",
+      "book": "PSA",
       "aliases": [
-        "PSA"
+        "Psalms",
+        "Psalmen",
+        "சங்கீதம்"
       ],
       "chapters": 150
     },
     {
-      "book": "Proverbs",
+      "book": "PRO",
       "aliases": [
-        "PRO"
+        "Proverbs",
+        "Sprüche",
+        "நீதிமொழிகள்"
       ],
       "chapters": 31
     },
     {
-      "book": "Ecclesiastes",
+      "book": "ECC",
       "aliases": [
-        "ECC"
+        "Ecclesiastes",
+        "Prediger",
+        "பிரசங்கி"
       ],
       "chapters": 12
     },
     {
-      "book": "Song of Songs",
+      "book": "SNG",
       "aliases": [
-        "SNG"
+        "Song of Songs",
+        "Hohelied",
+        "உன்னதப்பாட்டு"
       ],
       "chapters": 8
     },
     {
-      "book": "Isaiah",
+      "book": "ISA",
       "aliases": [
-        "ISA"
+        "Isaiah",
+        "Jesaja",
+        "ஏசாயா"
       ],
       "chapters": 66
     },
     {
-      "book": "Jeremiah",
+      "book": "JER",
       "aliases": [
-        "JER"
+        "Jeremiah",
+        "Jeremia",
+        "எரேமியா"
       ],
       "chapters": 52
     },
     {
-      "book": "Lamentations",
+      "book": "LAM",
       "aliases": [
-        "LAM"
+        "Lamentations",
+        "Klagelieder",
+        "புலம்பல்"
       ],
       "chapters": 5
     },
     {
-      "book": "Ezekiel",
+      "book": "EZK",
       "aliases": [
-        "EZK"
+        "Ezekiel",
+        "Hesekiel",
+        "எசேக்கியேல்"
       ],
       "chapters": 48
     },
     {
-      "book": "Daniel",
+      "book": "DAN",
       "aliases": [
-        "DAN"
+        "Daniel",
+        "தானியேல்"
       ],
       "chapters": 12
     },
     {
-      "book": "Hosea",
+      "book": "HOS",
       "aliases": [
-        "HOS"
+        "Hosea",
+        "ஓசியா"
       ],
       "chapters": 14
     },
     {
-      "book": "Joel",
+      "book": "JOL",
       "aliases": [
-        "JOL"
+        "Joel",
+        "யோவேல்"
       ],
       "chapters": 3
     },
     {
-      "book": "Amos",
+      "book": "AMO",
       "aliases": [
-        "AMO"
+        "Amos",
+        "ஆமோஸ்"
       ],
       "chapters": 9
     },
     {
-      "book": "Obadiah",
+      "book": "OBA",
       "aliases": [
-        "OBA"
+        "Obadiah",
+        "Obadja",
+        "ஒபதியா"
       ],
       "chapters": 1
     },
     {
-      "book": "Jonah",
+      "book": "JON",
       "aliases": [
-        "JON"
+        "Jonah",
+        "Jona",
+        "யோனா"
       ],
       "chapters": 4
     },
     {
-      "book": "Micah",
+      "book": "MIC",
       "aliases": [
-        "MIC"
+        "Micah",
+        "Micha",
+        "மீகா"
       ],
       "chapters": 7
     },
     {
-      "book": "Nahum",
+      "book": "NAM",
       "aliases": [
-        "NAM"
+        "Nahum",
+        "நாகூம்"
       ],
       "chapters": 3
     },
     {
-      "book": "Habakkuk",
+      "book": "HAB",
       "aliases": [
-        "HAB"
+        "Habakkuk",
+        "Habakuk",
+        "ஆபகூக்"
       ],
       "chapters": 3
     },
     {
-      "book": "Zephaniah",
+      "book": "ZEP",
       "aliases": [
-        "ZEP"
+        "Zephaniah",
+        "Zephanja",
+        "செப்பனியா"
       ],
       "chapters": 3
     },
     {
-      "book": "Haggai",
+      "book": "HAG",
       "aliases": [
-        "HAG"
+        "Haggai",
+        "ஆகாய்"
       ],
       "chapters": 2
     },
     {
-      "book": "Zechariah",
+      "book": "ZEC",
       "aliases": [
-        "ZEC"
+        "Zechariah",
+        "Sacharja",
+        "v"
       ],
       "chapters": 14
     },
     {
-      "book": "Malachi",
+      "book": "MAL",
       "aliases": [
-        "MAL"
+        "Malachi",
+        "Maleachi",
+        "மல்கியா"
       ],
       "chapters": 4
     },
     {
-      "book": "Matthew",
+      "book": "MAT",
       "aliases": [
-        "MAT"
+        "Matthew",
+        "Matthäus",
+        "மத்தேயு"
       ],
       "chapters": 28
     },
     {
-      "book": "Mark",
+      "book": "MRK",
       "aliases": [
-        "MRK"
+        "Mark",
+        "Markus",
+        "மாற்கு"
       ],
       "chapters": 16
     },
     {
-      "book": "Luke",
+      "book": "LUK",
       "aliases": [
-        "LUK"
+        "Luke",
+        "Lukas",
+        "லூக்கா"
       ],
       "chapters": 24
     },
     {
-      "book": "John",
+      "book": "JHN",
       "aliases": [
-        "JHN"
+        "John",
+        "Johannes",
+        "யோவான்"
       ],
       "chapters": 21
     },
     {
-      "book": "Acts",
+      "book": "ACT",
       "aliases": [
-        "ACT"
+        "Acts",
+        "Apostelgeschichte",
+        "அப்போஸ்தலர்"
       ],
       "chapters": 28
     },
     {
-      "book": "Romans",
+      "book": "ROM",
       "aliases": [
-        "ROM"
+        "Romans",
+        "Römerbrief",
+        "ரோமர்"
       ],
       "chapters": 16
     },
     {
-      "book": "1st Corinthians",
+      "book": "1CO",
       "aliases": [
-        "1CO"
+        "1st Corinthians",
+        "1. Korinther",
+        "1 கொரிந்தியர்"
       ],
       "chapters": 16
     },
     {
-      "book": "2nd Corinthians",
+      "book": "2CO",
       "aliases": [
-        "2CO"
+        "2nd Corinthians",
+        "2. Korinther",
+        "2 கொரிந்தியர்"
       ],
       "chapters": 13
     },
     {
-      "book": "Galatians",
+      "book": "GAL",
       "aliases": [
-        "GAL"
+        "Galatians",
+        "Galaterbrief",
+        "கலாத்தியர்"
       ],
       "chapters": 6
     },
     {
-      "book": "Ephesians",
+      "book": "EPH",
       "aliases": [
-        "EPH"
+        "Ephesians",
+        "Epheserbrief",
+        "எபேசியர்"
       ],
       "chapters": 6
     },
     {
-      "book": "Philippians",
+      "book": "PHP",
       "aliases": [
-        "PHP"
+        "Philippians",
+        "Philipper",
+        "பிலிப்பியர்"
       ],
       "chapters": 4
     },
     {
-      "book": "Colossians",
+      "book": "COL",
       "aliases": [
-        "COL"
+        "Colossians",
+        "Kolosserbrief",
+        "கொலோசெயர்"
       ],
       "chapters": 4
     },
     {
-      "book": "1st Thessalonians",
+      "book": "1TH",
       "aliases": [
-        "1TH"
+        "1st Thessalonians",
+        "1. Thessalonicherbrief",
+        "1 தெசலோனிக்கேயர்"
       ],
       "chapters": 5
     },
     {
-      "book": "2nd Thessalonians",
+      "book": "2TH",
       "aliases": [
-        "2TH"
+        "2nd Thessalonians",
+        "2. Thessalonicherbrief",
+        "2 தெசலோனிக்கேயர்"
       ],
       "chapters": 3
     },
     {
-      "book": "1st Timothy",
+      "book": "1TI",
       "aliases": [
-        "1TI"
+        "1st Timothy",
+        "1. Timotheus",
+        "1 தீமோத்தேயு"
       ],
       "chapters": 6
     },
     {
-      "book": "2nd Timothy",
+      "book": "2TI",
       "aliases": [
-        "2TI"
+        "2nd Timothy",
+        "2. Timotheus",
+        "2 தீமோத்தேயு"
       ],
       "chapters": 4
     },
     {
-      "book": "Titus",
+      "book": "TIT",
       "aliases": [
-        "TIT"
+        "Titus",
+        "Titusbrief",
+        "தீத்து"
       ],
       "chapters": 3
     },
     {
-      "book": "Philemon",
+      "book": "PHM",
       "aliases": [
-        "PHM"
+        "Philemon",
+        "Philemonbrief",
+        "பிலேமோன்"
       ],
       "chapters": 1
     },
     {
-      "book": "Hebrews",
+      "book": "HEB",
       "aliases": [
-        "HEB"
+        "Hebrews",
+        "Hebräerbrief",
+        "எபிரெயர்"
       ],
       "chapters": 13
     },
     {
-      "book": "James",
+      "book": "JAS",
       "aliases": [
-        "JAS"
+        "James",
+        "Jakobus",
+        "யாக்கோபு"
       ],
       "chapters": 5
     },
     {
-      "book": "1st Peter",
+      "book": "1PE",
       "aliases": [
-        "1PE"
+        "1st Peter",
+        "1. Petrus",
+        "1 பேதுரு"
       ],
       "chapters": 5
     },
     {
-      "book": "2nd Peter",
+      "book": "2PE",
       "aliases": [
-        "2PE"
+        "2nd Peter",
+        "2. Petrus",
+        "2 பேதுரு"
       ],
       "chapters": 3
     },
     {
-      "book": "1st John",
+      "book": "1JN",
       "aliases": [
-        "1JN"
+        "1st John",
+        "1. Johannes",
+        "1 யோவான்"
       ],
       "chapters": 4
     },
     {
-      "book": "2nd John",
+      "book": "2JN",
       "aliases": [
-        "2JN"
+        "2nd John",
+        "2. Johannes",
+        "2 யோவான்"
       ],
       "chapters": 1
     },
     {
-      "book": "3rd John",
+      "book": "3JN",
       "aliases": [
-        "3JN"
+        "3rd John",
+        "3. Johannes",
+        "3 யோவான்"
       ],
       "chapters": 1
     },
     {
-      "book": "Jude",
+      "book": "JUD",
       "aliases": [
-        "JUD"
+        "Jude",
+        "Judas",
+        "யூதா"
       ],
       "chapters": 1
     },
     {
-      "book": "Revelation",
+      "book": "REV",
       "aliases": [
-        "REV"
+        "Revelation",
+        "Offenbarung",
+        "வெளிப்படுத்தின விசேஷம்"
       ],
       "chapters": 22
     }
