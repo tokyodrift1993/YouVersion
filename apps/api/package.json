@@ -2,13 +2,13 @@
   "name": "@tokyodrift1993/youversion-api",
   "version": "0.2.2",
   "description": "Express Rest API for getting verses from YouVersion.",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
+  "types": "./dist/api/src/index.d.ts",
+  "main": "./dist/api/src/index.js",
   "scripts": {
     "lint": "eslint ./ --ext js,ts",
     "build": "tsc",
-    "start": "npm run build && node ./dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\""
+    "start": "npm run build && node ./dist/api/src/index.js",
+    "dev": "tsc-watch --onSuccess \"node ./dist/api/src/index.js\""
   },
   "keywords": [],
   "author": "driiftkiing",

@@ -2,6 +2,8 @@ import axios, {AxiosError} from 'axios';
 import * as cheerio from 'cheerio';
 import express, {Request, Response, Router} from 'express';
 
+import {ApiVerseRequestParams, ApiVerseResponse} from '@tokyodrift1993/library/interfaces/api.interface';
+
 import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper';
 import bookList from './db/books.json';
 import versions from './db/versions.json';
@@ -14,22 +16,6 @@ interface ApiErrorResponse {
 const apiError = (res: Response<ApiErrorResponse>, statusCode: number, message: string) => {
   res.status(statusCode).send({statusCode, message});
 };
-
-interface ApiVerseResponse {
-  citation: string;
-  passage: string;
-  book: string;
-  chapter: number;
-  verses: string;
-}
-
-interface ApiVerseRequestParams {
-  book: string;
-  chapter: number;
-  verses: string;
-  version: string;
-  force?: string | boolean;
-}
 
 export const verse: Router = express.Router();
 

@@ -2,25 +2,11 @@ import axios from 'axios';
 import {Command, Option} from 'commander';
 import format from 'string-format';
 
+import {ApiVerseResponse} from '@tokyodrift1993/library/interfaces/api.interface';
+
 import {GetVersesOptions} from '../interfaces/command.interface';
 import {buildVerseApiUrl} from '../utils/api.helper';
 import {getConfigurationFile} from '../utils/filer.helper';
-
-// DKTODO: create a shared library
-interface ApiVerseRequestParams {
-  book: string;
-  chapter: number;
-  verses: string;
-  version: string;
-  force?: boolean;
-}
-interface ApiVerseResponse {
-  citation: string;
-  passage: string;
-  book: string;
-  chapter: number;
-  verses: string;
-}
 
 export const getVerses = new Command();
 

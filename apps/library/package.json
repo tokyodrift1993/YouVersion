@@ -1,0 +1,23 @@
+{
+  "name": "library",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint ./ --ext js,ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "generate:barrels": "barrelsby --config barrelsby.json",
+    "generate:barrels:watch": "nodemon --watch ./src --ext ts --ignore \"index.ts\" --exec \"yarn generate:barrels\""
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "barrelsby": "~2.3.4",
+    "nodemon": "~2.0.18"
+  }
+}
