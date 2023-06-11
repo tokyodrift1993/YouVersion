@@ -46,7 +46,7 @@ COPY --chown=${PUID}:${PGID} . .
 USER ${PUSER}
 
 RUN NODE_ENV=dev pnpm install
-RUN pnpm build
+RUN pnpm -r build
 RUN pnpm prune --production
 
 USER ${PUSER}
