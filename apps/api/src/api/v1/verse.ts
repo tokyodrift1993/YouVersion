@@ -51,8 +51,8 @@ verse.get(
     };
 
     const bookFinder =
-      bookList.books.find((o: bookType) => o.book.toLowerCase() === book.toLowerCase())
-      || bookList.books.find((o: bookType) => o.aliases.includes(book.toUpperCase()));
+      bookList.find((o: bookType) => o.book.toLowerCase() === book.toLowerCase())
+      || bookList.find((o: bookType) => o.aliases.includes(book.toUpperCase()));
 
     if (!bookFinder) {
       return apiError(res, 400, `Could not find book '${book}' by name or alias.`);
