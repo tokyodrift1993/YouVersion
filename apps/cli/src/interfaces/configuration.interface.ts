@@ -3,6 +3,7 @@ interface ConfigurationFileVerses {
   chapter: number;
   verses: string;
   force?: boolean;
+  options?: Record<string, {verseOffset: number}>;
 }
 
 export interface ConfigurationFile {

@@ -78,7 +78,7 @@ getVerses
               additionalParams: youVersionApiAdditionalParams,
               book: verse.book,
               chapter: verse.chapter,
-              verses: verse.verses,
+              verses: verse.verses + (verse.options?.[version]?.verseOffset || 0),
               version: version,
               force: verse.force,
             }),
