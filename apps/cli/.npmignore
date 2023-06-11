@@ -3,3 +3,4 @@ src
 tsconfig.json
 /*.yml
 .env
+*.tgz
