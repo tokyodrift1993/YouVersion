@@ -49,6 +49,6 @@ RUN NODE_ENV=dev pnpm install
 RUN pnpm -r build
 RUN pnpm prune --production
 
-USER ${PUSER}
+WORKDIR /youversion/apps/api
 
-CMD ["node", "./apps/api/dist/api/src/index.js"]
+CMD ["node", "./dist/api/src/index.js"]
