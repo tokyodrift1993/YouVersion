@@ -51,4 +51,4 @@ RUN pnpm prune --production
 
 USER ${PUSER}
 
-CMD ["node", "./dist/api/src/index.js"]
+CMD ["node", "./apps/api/dist/api/src/index.js"]
