@@ -24,7 +24,7 @@ services:
       - "6379:6379"
   api:
     <<: *docker-base-data
-    build: apps/api
+    build: .
     ports:
       - "3000:3000"
     env_file: apps/api/.env.docker
