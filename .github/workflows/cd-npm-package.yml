@@ -31,9 +31,7 @@ jobs:
         name: Install pnpm
         with:
           version: 8
-
-      - name: Install dependencies
-        run: pnpm install
+          run_install: true
 
       - name: Build
         working-directory: apps/cli
