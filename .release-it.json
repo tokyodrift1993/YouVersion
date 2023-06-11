@@ -1,8 +1,5 @@
 {
   "plugins": {
-    "@release-it/bumper": {
-      "out": ["apps/api/package.json", "apps/cli/package.json"]
-    },
     "@release-it-plugins/workspaces": {
       "additionalManifests": {
         "versionUpdates": []
