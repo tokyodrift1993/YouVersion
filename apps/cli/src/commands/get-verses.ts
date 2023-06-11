@@ -26,8 +26,16 @@ export const getVerses = new Command();
 
 interface GetVersesCommandOptions extends GetVersesOptions, Command {}
 
-const buildVerseApiUrl = ({baseUrl, book, chapter, verses, version, force = false}: ApiVerseRequestParams & {baseUrl: string}) =>
-  [baseUrl, `?${querystring.stringify({book, chapter, verses, version, force})}`].join('');
+const buildVerseApiUrl = ({
+  baseUrl,
+  additionalParams,
+  book,
+  chapter,
+  verses,
+  version,
+  force = false,
+}: ApiVerseRequestParams & {baseUrl: string; additionalParams?: string}) =>
+  [baseUrl, `?${querystring.stringify({book, chapter, verses, version, force})}`, additionalParams ? `&${additionalParams}` : ''].join('');
 
 getVerses
   .name('get-verses')
@@ -35,10 +43,16 @@ getVerses
   .requiredOption('--config-file-path <config-file-path>', 'Path to config file')
   .addOption(new Option('--you-version-api-url <you-version-api-url>', 'turn off colour output').env('YOU_VERSION_API_URL'))
   .addOption(new Option('--you-version-api-path <you-version-api-path>', 'turn off colour output').env('YOU_VERSION_API_PATH'))
+  .addOption(
+    new Option('--you-version-api-additional-params <you-version-api-additional-params>', 'turn off colour output').env(
+      'YOU_VERSION_API_ADDITIONAL_PARAMS',
+    ),
+  )
   .option('--output-format <output-format>', 'Format', '{0.passage}\n–\n{1.passage}\n{0.book} | {1.book} {0.chapter}:{0.verses}\n\n')
   .action(async (opts: GetVersesCommandOptions) => {
     const youVersionApiUrl = opts.youVersionApiUrl;
     const youVersionApiPath = opts.youVersionApiPath;
+    const youVersionApiAdditionalParams = opts.youVersionApiAdditionalParams;
 
     // ===> pre checks
     if (!(youVersionApiUrl && youVersionApiPath)) {
@@ -61,6 +75,7 @@ getVerses
           await axios.get<ApiVerseResponse>(
             buildVerseApiUrl({
               baseUrl: [youVersionApiUrl, youVersionApiPath].join(''),
+              additionalParams: youVersionApiAdditionalParams,
               book: verse.book,
               chapter: verse.chapter,
               verses: verse.verses,
