@@ -41,5 +41,5 @@ pnpm link .
 And to run use
 
 ```bash
-youversion-cli
+npx youversion-cli
 ```
