@@ -1,6 +1,6 @@
-# YouVersion-API
+# YouVersion-CLI
 
-Express Rest API for getting verses and such from YouVersion.
+Commandline helper for YouVersion.
 
 # Building and Running
 
