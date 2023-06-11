@@ -1,6 +1,6 @@
 import fs from 'fs';
-import yaml from 'js-yaml';
 import path from 'path';
+import yaml from 'js-yaml';
 
 import {ConfigurationFile} from '../interfaces/configuration.interface';
 
