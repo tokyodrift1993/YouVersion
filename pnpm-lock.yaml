@@ -68,6 +68,9 @@ importers:
       fs:
         specifier: 0.0.1-security
         version: 0.0.1-security
+      module-alias:
+        specifier: ^2.2.3
+        version: 2.2.3
       path:
         specifier: ^0.12.7
         version: 0.12.7
@@ -111,9 +114,6 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ~2.0.0
         version: 2.0.0(@typescript-eslint/eslint-plugin@5.59.9)(eslint@8.42.0)
-      module-alias:
-        specifier: ^2.2.3
-        version: 2.2.3
       prettier:
         specifier: npm:@btmills/prettier@^2.8.8
         version: /@btmills/prettier@2.8.8
@@ -138,6 +138,9 @@ importers:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
+      module-alias:
+        specifier: ^2.2.3
+        version: 2.2.3
       querystring:
         specifier: ^0.2.1
         version: 0.2.1
@@ -175,9 +178,6 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ~2.0.0
         version: 2.0.0(@typescript-eslint/eslint-plugin@5.59.9)(eslint@8.42.0)
-      module-alias:
-        specifier: ^2.2.3
-        version: 2.2.3
       prettier:
         specifier: npm:@btmills/prettier@^2.8.8
         version: /@btmills/prettier@2.8.8
@@ -4640,7 +4640,7 @@ packages:
 
   /module-alias@2.2.3:
     resolution: {integrity: sha512-23g5BFj4zdQL/b6tor7Ji+QY4pEfNH784BMslY9Qb0UnJWRAt+lQGLYmRaM0KDBwIG23ffEBELhZDP2rhi9f/Q==}
-    dev: true
+    dev: false
 
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
