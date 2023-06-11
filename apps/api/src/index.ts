@@ -1,3 +1,5 @@
+import 'module-alias/register';
+
 import dotEnvExtended from 'dotenv-extended';
 import express, {Express} from 'express';
 

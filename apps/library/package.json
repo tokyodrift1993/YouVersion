@@ -10,14 +10,15 @@
   "scripts": {
     "lint": "eslint ./ --ext js,ts",
     "build": "tsc",
-    "build:watch": "tsc --watch",
-    "generate:barrels": "barrelsby --config barrelsby.json",
-    "generate:barrels:watch": "nodemon --watch ./src --ext ts --ignore \"index.ts\" --exec \"yarn generate:barrels\""
+    "dev": "tsc-watch",
+    "barrels": "barrelsby --config barrelsby.json",
+    "barrels:watch": "nodemon --watch ./src --ext ts --ignore \"index.ts\" --exec \"yarn generate:barrels\""
   },
   "dependencies": {
   },
   "devDependencies": {
     "barrelsby": "~2.3.4",
-    "nodemon": "~2.0.18"
+    "nodemon": "~2.0.18",
+    "tsc-watch": "^6.0.0"
   }
 }

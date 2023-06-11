@@ -111,6 +111,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ~2.0.0
         version: 2.0.0(@typescript-eslint/eslint-plugin@5.59.9)(eslint@8.42.0)
+      module-alias:
+        specifier: ^2.2.3
+        version: 2.2.3
       prettier:
         specifier: npm:@btmills/prettier@^2.8.8
         version: /@btmills/prettier@2.8.8
@@ -172,6 +175,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ~2.0.0
         version: 2.0.0(@typescript-eslint/eslint-plugin@5.59.9)(eslint@8.42.0)
+      module-alias:
+        specifier: ^2.2.3
+        version: 2.2.3
       prettier:
         specifier: npm:@btmills/prettier@^2.8.8
         version: /@btmills/prettier@2.8.8
@@ -190,6 +196,9 @@ importers:
       nodemon:
         specifier: ~2.0.18
         version: 2.0.18
+      tsc-watch:
+        specifier: ^6.0.0
+        version: 6.0.0(typescript@4.9.5)
 
 packages:
 
@@ -4627,6 +4636,10 @@ packages:
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+    dev: true
+
+  /module-alias@2.2.3:
+    resolution: {integrity: sha512-23g5BFj4zdQL/b6tor7Ji+QY4pEfNH784BMslY9Qb0UnJWRAt+lQGLYmRaM0KDBwIG23ffEBELhZDP2rhi9f/Q==}
     dev: true
 
   /ms@2.0.0:
