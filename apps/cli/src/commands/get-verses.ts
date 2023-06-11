@@ -41,14 +41,18 @@ getVerses
   .name('get-verses')
   .description('Gets verses over the YouVersion Express Api defined in the env file.')
   .requiredOption('--config-file-path <config-file-path>', 'Path to config file')
-  .addOption(new Option('--you-version-api-url <you-version-api-url>', 'turn off colour output').env('YOU_VERSION_API_URL'))
-  .addOption(new Option('--you-version-api-path <you-version-api-path>', 'turn off colour output').env('YOU_VERSION_API_PATH'))
+  .addOption(new Option('--you-version-api-url <you-version-api-url>', 'turn off colour output').env('YOU_VERSION_CLI_API_URL'))
+  .addOption(new Option('--you-version-api-path <you-version-api-path>', 'turn off colour output').env('YOU_VERSION_CLI_API_PATH'))
   .addOption(
     new Option('--you-version-api-additional-params <you-version-api-additional-params>', 'turn off colour output').env(
-      'YOU_VERSION_API_ADDITIONAL_PARAMS',
+      'YOU_VERSION_CLI_API_ADDITIONAL_PARAMS',
     ),
   )
-  .option('--output-format <output-format>', 'Format', '{0.passage}\n–\n{1.passage}\n{0.book} | {1.book} {0.chapter}:{0.verses}\n\n\n')
+  .addOption(
+    new Option('--template-output-format <template-output-format>', 'Template for output format').env(
+      'YOU_VERSION_CLI_TEMPLATE_OUTPUT_FORMAT',
+    ),
+  )
   .action(async (opts: GetVersesCommandOptions) => {
     const youVersionApiUrl = opts.youVersionApiUrl;
     const youVersionApiPath = opts.youVersionApiPath;
@@ -57,7 +61,7 @@ getVerses
     // ===> pre checks
     if (!(youVersionApiUrl && youVersionApiPath)) {
       console.error(
-        'ENV variable "YOU_VERSION_API_URL" and/or "YOU_VERSION_API_PATH" or parameter "--you-version-api-url" and/or "--you-version-api-path" must be set!',
+        'ENV variable "YOU_VERSION_CLI_API_URL" and/or "YOU_VERSION_CLI_API_PATH" or parameter "--you-version-api-url" and/or "--you-version-api-path" must be set!',
       );
 
       return;
@@ -86,7 +90,7 @@ getVerses
         ).data;
       }
 
-      results.push(format(`${opts.outputFormat}`, ...Object.values(apiVerseResponses)));
+      results.push(format(`${opts.templateOutputFormat}`, ...Object.values(apiVerseResponses)));
     }
 
     console.log(results.join('').trim());

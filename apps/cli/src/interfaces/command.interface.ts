@@ -3,7 +3,7 @@ interface RequiredOptions {
 }
 
 export interface GetVersesOptions extends RequiredOptions {
-  outputFormat: string;
+  templateOutputFormat: string;
   youVersionApiUrl: string;
   youVersionApiPath: string;
   youVersionApiAdditionalParams: string;
