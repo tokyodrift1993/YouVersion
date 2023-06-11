@@ -7,7 +7,7 @@
     "youversion-cli": "./dist/index.js"
   },
   "scripts": {
-    "lint": "eslint src/ --ext .js,.ts",
+    "lint": "eslint ./ --ext js,ts",
     "build": "tsc",
     "dev": "tsc-watch"
   },
