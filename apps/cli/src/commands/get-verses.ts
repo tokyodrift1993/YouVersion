@@ -1,9 +1,9 @@
 import axios from 'axios';
 import {Command, Option} from 'commander';
-import querystring from 'querystring';
 import format from 'string-format';
 
 import {GetVersesOptions} from '../interfaces/command.interface';
+import {buildVerseApiUrl} from '../utils/api.helper';
 import {getConfigurationFile} from '../utils/filer.helper';
 
 // DKTODO: create a shared library
@@ -25,17 +25,6 @@ interface ApiVerseResponse {
 export const getVerses = new Command();
 
 interface GetVersesCommandOptions extends GetVersesOptions, Command {}
-
-const buildVerseApiUrl = ({
-  baseUrl,
-  additionalParams,
-  book,
-  chapter,
-  verses,
-  version,
-  force = false,
-}: ApiVerseRequestParams & {baseUrl: string; additionalParams?: string}) =>
-  [baseUrl, `?${querystring.stringify({book, chapter, verses, version, force})}`, additionalParams ? `&${additionalParams}` : ''].join('');
 
 getVerses
   .name('get-verses')
