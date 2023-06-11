@@ -48,7 +48,7 @@ getVerses
       'YOU_VERSION_API_ADDITIONAL_PARAMS',
     ),
   )
-  .option('--output-format <output-format>', 'Format', '{0.passage}\n–\n{1.passage}\n{0.book} | {1.book} {0.chapter}:{0.verses}\n\n')
+  .option('--output-format <output-format>', 'Format', '{0.passage}\n–\n{1.passage}\n{0.book} | {1.book} {0.chapter}:{0.verses}\n\n\n')
   .action(async (opts: GetVersesCommandOptions) => {
     const youVersionApiUrl = opts.youVersionApiUrl;
     const youVersionApiPath = opts.youVersionApiPath;
