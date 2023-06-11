@@ -11,6 +11,9 @@
     "build": "tsc",
     "dev": "tsc-watch"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "driiftkiing",
   "license": "MIT",
