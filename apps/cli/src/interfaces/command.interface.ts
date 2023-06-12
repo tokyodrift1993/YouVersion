@@ -8,3 +8,5 @@ export interface GetVersesOptions extends RequiredOptions {
   youVersionApiPath: string;
   youVersionApiAdditionalParams: string;
 }
+
+export type RetrieveAllVersesVersesOptions = Omit<GetVersesOptions, 'templateOutputFormat'>;
