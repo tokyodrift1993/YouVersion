@@ -127,14 +127,14 @@ verse.get(
         verses,
       });
     } catch (err) {
-      console.error(err);
-
       let statusCode = 500;
       let message = 'An error has occurred';
 
       if (err instanceof AxiosError && err.response) {
         statusCode = err.response.status || statusCode;
         message = err.response.data || message;
+      } else {
+        console.error(err);
       }
 
       return res.status(statusCode).send({statusCode, message});
