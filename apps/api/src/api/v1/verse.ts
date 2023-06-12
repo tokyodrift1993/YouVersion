@@ -1,4 +1,5 @@
 import axios, {AxiosError} from 'axios';
+import axiosRetry from 'axios-retry';
 import * as cheerio from 'cheerio';
 import express, {Request, Response, Router} from 'express';
 
@@ -7,6 +8,12 @@ import versions from '@tokyodrift1993/library/assets/versions.json';
 import {ApiVerseRequestParams, ApiVerseResponse} from '@tokyodrift1993/library/interfaces/api.interface';
 
 import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper';
+
+axiosRetry(axios, {
+  retries: 10,
+  retryDelay: (retryCount) => retryCount * 100,
+  retryCondition: (err) => /^5\d{2}$/.test(err.response?.status.toString() || ''),
+});
 
 interface ApiErrorResponse {
   statusCode: number;
