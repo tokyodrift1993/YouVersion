@@ -51,7 +51,7 @@ program
           return;
         }
 
-        const queue = new PQueue({concurrency: 20, autoStart: false});
+        const queue = new PQueue({concurrency: 5, autoStart: false});
         let count = 0;
         queue.on('active', () => console.log(`Working on item #${++count}.  Size: ${queue.size}  Pending: ${queue.pending}`));
 
@@ -72,7 +72,7 @@ program
                       additionalParams: youVersionApiAdditionalParams,
                       book: book.book,
                       chapter: chapter,
-                      verses: '1',
+                      verses: '1', // TODO: also manually '2' for psalms
                       version: version,
                       force: false,
                     }),
@@ -129,6 +129,10 @@ program
         console.log('Amount of works', queue.size);
 
         await queue.start();
+
+        await queue.onEmpty();
+
+        console.log(statistics);
       }),
   )
   .parseAsync(process.argv)
