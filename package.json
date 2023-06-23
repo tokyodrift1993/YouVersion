@@ -1,6 +1,6 @@
 {
   "name": "@tokyodrift1993/youversion",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "YouVersion workspace.",
   "scripts": {
     "lint": "eslint ./ --ext js,ts",
