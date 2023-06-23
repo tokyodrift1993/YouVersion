@@ -24,9 +24,9 @@ getVerses
     ),
   )
   .addOption(
-    new Option('--template-output-format <template-output-format>', 'Template for output format').env(
-      'YOU_VERSION_CLI_TEMPLATE_OUTPUT_FORMAT',
-    ),
+    new Option('--template-output-format <template-output-format>', 'Template for output format')
+      .default('{0.passage}\n{0.book} {0.chapter}:{0.verses}\n\n')
+      .env('YOU_VERSION_CLI_TEMPLATE_OUTPUT_FORMAT'),
   )
   .action(async (opts: GetVersesCommandOptions) => {
     const youVersionApiUrl = opts.youVersionApiUrl;
