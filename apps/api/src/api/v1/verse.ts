@@ -2,12 +2,15 @@ import axios, {AxiosError} from 'axios';
 import axiosRetry from 'axios-retry';
 import * as cheerio from 'cheerio';
 import express, {Request, Response, Router} from 'express';
+import {Error} from 'mongoose';
 
 import bookList from '@tokyodrift1993/library/assets/books.json';
 import versions from '@tokyodrift1993/library/assets/versions.json';
 import {ApiVerseRequestParams, ApiVerseResponse} from '@tokyodrift1993/library/interfaces/api.interface';
 
+import {getMongoDb} from '../../helpers/mongo.helper';
 import {getRedisClient, REDIS_VERSE_EXPIRATION} from '../../helpers/redis.helper';
+import {VerseModel} from '../../models/verse';
 
 axiosRetry(axios, {
   retries: 10,
@@ -33,6 +36,7 @@ verse.get(
     res: Response<ApiErrorResponse | ApiVerseResponse>,
   ) => {
     const redisClient = await getRedisClient();
+    const mongo = await getMongoDb();
 
     const baseURL = 'https://www.bible.com/bible';
 
@@ -69,15 +73,31 @@ verse.get(
 
     console.log('🖥️[Web]: get content for link:', URL);
 
+    const getResultsFromCache = async () => {
+      if (redisClient) {
+        return redisClient.get(URL);
+      }
+
+      if (mongo) {
+        try {
+          return (await VerseModel.findOne({url: URL}).exec())?.html;
+        } catch (e) {
+          if (e instanceof Error && e.message !== 'Authentication failed') {
+            throw e;
+          }
+        }
+      }
+    };
+
     try {
       let data;
-      const resultsFromCache = redisClient && (await redisClient.get(URL));
+      const resultsFromCache = await getResultsFromCache();
 
       if (!force && resultsFromCache) {
         data = resultsFromCache;
         console.log('🖥️[Web]: get content from cache');
       } else {
-        if (force && redisClient) {
+        if (force && (redisClient || mongo)) {
           console.log('🖥️[Web]: get content live (forced)!');
         }
 
@@ -96,8 +116,14 @@ verse.get(
         return apiError(res, 400, 'Chapter not found.');
       }
 
-      if (!resultsFromCache && redisClient) {
-        await redisClient.set(URL, data, {EX: REDIS_VERSE_EXPIRATION()});
+      if (!resultsFromCache) {
+        if (redisClient) {
+          await redisClient.set(URL, data, {EX: REDIS_VERSE_EXPIRATION()});
+        }
+
+        if (mongo) {
+          await new VerseModel({url: URL, html: data}).save();
+        }
       }
 
       const versesArray: Array<string> = [];

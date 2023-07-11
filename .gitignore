@@ -114,3 +114,4 @@ deprecated/
 
 # docker
 /.docker/redis
+/.docker/mongo

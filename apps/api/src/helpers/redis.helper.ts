@@ -6,7 +6,7 @@ let redisClient: RedisClientType;
 let isReady: boolean;
 
 export const getRedisClient = async (): Promise<RedisClientType | null> => {
-  if (process.env.USE_CACHING !== 'true') {
+  if (process.env.USE_CACHING !== 'redis') {
     return null;
   }
 

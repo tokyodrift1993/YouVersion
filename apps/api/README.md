@@ -204,3 +204,25 @@ Trying to access a book that does not exist will prompt a similar `400 Bad Respo
 | SCH2000  | 157  |
 
 </details>
+
+
+# Cache
+
+## MongoDB
+
+### Create User
+
+Connect
+```shell
+dockerc exec mongo mongosh -u root -p root
+```
+
+Select to database
+```shell
+use youversion
+```
+
+Create user
+```shell
+db.createUser({user: "youversion", pwd: "youversion", roles: [{role: "readWrite", db: "youversion"}]})
+```
