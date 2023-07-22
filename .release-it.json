@@ -10,7 +10,7 @@
     }
   },
   "hooks": {
-    "after:bump": "auto-changelog --latest-version v${version}"
+    "after:bump": "auto-changelog --ignore-commit-pattern \"Release v\" --sort-commits date-desc"
   },
   "git": {
     "changelog": "auto-changelog --stdout --template ./changelog-template-for-release.hbs --sort-commits date-desc",
