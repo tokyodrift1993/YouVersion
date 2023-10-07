@@ -392,6 +392,7 @@
     "aliases": [
       "Romans",
       "Römerbrief",
+      "Römer",
       "ரோமர்"
     ],
     "chapters": 16
@@ -419,6 +420,7 @@
     "aliases": [
       "Galatians",
       "Galaterbrief",
+      "Galater",
       "கலாத்தியர்"
     ],
     "chapters": 6
@@ -428,6 +430,7 @@
     "aliases": [
       "Ephesians",
       "Epheserbrief",
+      "Epheser",
       "எபேசியர்"
     ],
     "chapters": 6
@@ -446,6 +449,7 @@
     "aliases": [
       "Colossians",
       "Kolosserbrief",
+      "Kolosser",
       "கொலோசெயர்"
     ],
     "chapters": 4
@@ -455,6 +459,7 @@
     "aliases": [
       "1st Thessalonians",
       "1. Thessalonicherbrief",
+      "1. Thessalonicher",
       "1 தெசலோனிக்கேயர்"
     ],
     "chapters": 5
@@ -464,6 +469,7 @@
     "aliases": [
       "2nd Thessalonians",
       "2. Thessalonicherbrief",
+      "2. Thessalonicher",
       "2 தெசலோனிக்கேயர்"
     ],
     "chapters": 3
@@ -509,6 +515,7 @@
     "aliases": [
       "Hebrews",
       "Hebräerbrief",
+      "Hebräer",
       "எபிரெயர்"
     ],
     "chapters": 13
