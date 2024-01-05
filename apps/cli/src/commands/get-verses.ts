@@ -1,4 +1,6 @@
-import axios from 'axios';
+import * as process from 'process';
+import querystring from 'querystring';
+import axios, {AxiosError} from 'axios';
 import {Command, Option} from 'commander';
 import format from 'string-format';
 
@@ -46,27 +48,46 @@ getVerses
 
     const results: string[] = [];
 
-    for (const verse of Object.values(config.verses)) {
-      const apiVerseResponses: Record<string, ApiVerseResponse> = {};
+    try {
+      for (const verse of Object.values(config.verses)) {
+        const apiVerseResponses: Record<string, ApiVerseResponse> = {};
 
-      for (const [innerIndex, version] of Object.entries(config.version)) {
-        apiVerseResponses[innerIndex] = (
-          await axios.get<ApiVerseResponse>(
-            buildVerseApiUrl({
-              baseUrl: [youVersionApiUrl, youVersionApiPath].join(''),
-              additionalParams: youVersionApiAdditionalParams,
-              book: verse.book,
-              chapter: verse.chapter,
-              verses: verse.verses + (verse.options?.[version]?.verseOffset || 0),
-              version: version,
-              force: verse.force,
-            }),
-          )
-        ).data;
+        for (const [innerIndex, version] of Object.entries(config.version)) {
+          apiVerseResponses[innerIndex] = (
+            await axios.get<ApiVerseResponse>(
+              buildVerseApiUrl({
+                baseUrl: [youVersionApiUrl, youVersionApiPath].join(''),
+                additionalParams: youVersionApiAdditionalParams,
+                book: verse.book,
+                chapter: verse.chapter,
+                verses: verse.verses + (verse.options?.[version]?.verseOffset || 0),
+                version: version,
+                force: verse.force,
+              }),
+            )
+          ).data;
+        }
+
+        results.push(format(`${opts.templateOutputFormat}`, ...Object.values(apiVerseResponses)));
       }
 
-      results.push(format(`${opts.templateOutputFormat}`, ...Object.values(apiVerseResponses)));
+      console.log(results.join('').trim());
+    } catch (e) {
+      console.error(
+        'Error happened:',
+        e instanceof AxiosError && e?.response?.data
+          ? JSON.stringify(
+              {
+                response: e.response.data,
+                request: querystring.parse('path' in e.request ? e.request.path.match(/\?(.*)/)?.[1] : ''),
+              },
+              null,
+              4,
+            )
+          : e instanceof Error
+          ? e?.message
+          : '',
+      );
+      process.exit(1);
     }
-
-    console.log(results.join('').trim());
   });
