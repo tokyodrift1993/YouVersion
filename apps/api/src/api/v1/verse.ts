@@ -106,12 +106,6 @@ verse.get(
 
       const $ = cheerio.load(data);
 
-      const lastVerse = $('.ChapterContent_reader__UZc2K').eq(-1).text();
-
-      if (lastVerse) {
-        return apiError(res, 400, 'Verse not found');
-      }
-
       if (chapter > bookFinder.chapters) {
         return apiError(res, 400, 'Chapter not found.');
       }
@@ -144,6 +138,11 @@ verse.get(
       });
 
       const citation = citationsArray[0];
+      const passage = versesArray?.[0];
+
+      if (!passage) {
+        return apiError(res, 404, 'Verse not found');
+      }
 
       return res.status(200).send({
         citation: citation,
