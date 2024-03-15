@@ -137,7 +137,7 @@ verse.get(
         citationsArray.push(citation);
       });
 
-      const citation = citationsArray[0];
+      const citation = citationsArray?.[0];
       const passage = versesArray?.[0];
 
       if (!passage) {
@@ -145,9 +145,9 @@ verse.get(
       }
 
       return res.status(200).send({
-        citation: citation,
-        passage: versesArray[0],
-        book: citation.match(new RegExp(`(.*) ${chapter}:`))?.[1] || bookFinder.book,
+        citation: citation || '',
+        passage: passage || '',
+        book: citation?.match(new RegExp(`(.*) ${chapter}:`))?.[1] || bookFinder.book,
         chapter,
         verses,
       });
