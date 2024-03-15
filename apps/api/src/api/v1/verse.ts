@@ -128,8 +128,8 @@ verse.get(
 
       const versesArray: Array<string> = [];
       const citationsArray: Array<string> = [];
-      const wrapper = $('div.max-w-full.w-full div > p');
-      const citationWrapper = $('div.max-w-full.w-full div > h2');
+      const wrapper = $('div.max-w-full.w-full > div > div > div > div:nth-child(1) > a > p');
+      const citationWrapper = $('div.max-w-full.w-full > div > div > div > div:nth-child(1) > h2');
 
       wrapper.each((i, p) => {
         const rawVerse = $(p).eq(0).text();
