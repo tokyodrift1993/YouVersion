@@ -110,7 +110,7 @@ verse.get(
         return apiError(res, 400, 'Chapter not found.');
       }
 
-      if (!resultsFromCache) {
+      if (!resultsFromCache || force) {
         if (redisClient) {
           await redisClient.set(URL, data, {EX: REDIS_VERSE_EXPIRATION()});
         }
